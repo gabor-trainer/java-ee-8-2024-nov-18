@@ -4,7 +4,10 @@
 
 ### **Objective**
 
-By the end of this lab, students will:
+**Note:** This lab provides some source code examples and instructions to guide you through the process of exploring and modifying a Java EE 8 JSF project. Always try to understand the code and experiment with it to get a better grasp of the concepts.
+**When the lab asks you to modify the code, always try to do it first on your own. Using, and copy and pasting the solution code provided here is always the last resort. :-)**
+
+By the end of this lab, you will:
 
 1.  Clone and import the `jsf_intro` project.
 2.  Review the source code structure and understand its components.
@@ -15,6 +18,8 @@ By the end of this lab, students will:
 ---
 
 ### **Prerequisites**
+
+**Connect** to your lab machine using RDP, with the user name and password provided by instructor or lab manager.
 
 Ensure the following are already set up:
 
