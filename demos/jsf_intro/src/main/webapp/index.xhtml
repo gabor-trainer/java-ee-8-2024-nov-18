@@ -38,6 +38,16 @@
                     <f:validateLength minimum="3" maximum="30">
                     </f:validateLength>
                 </h:inputText>
+                <h:outputLabel for="address" value="Address:">
+                </h:outputLabel>
+                <h:inputText id="address"
+                             label="Address"
+                             value="#{customer.address}">
+                    <f:validateLength minimum="3" maximum="30">
+                    </f:validateLength>
+                </h:inputText>
+
+
                 <h:panelGroup></h:panelGroup>
                 <h:commandButton action="confirmation" value="Savexxx">
                 </h:commandButton>
