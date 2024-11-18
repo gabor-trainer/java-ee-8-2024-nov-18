@@ -1,2 +1,1 @@
-# java-ee-8-2024-nov-18
-java-ee-8-2024-nov-18
+### Java EE 8 2024-nov-18
