@@ -11,12 +11,10 @@
     <h:form>
       <h:messages/>
       <h:panelGrid columns="2">
-
         <h:outputText value="Echo input:"/>
         <h:inputText id="textInput" value="#{controller.text}">
           <f:ajax render="textVal" event="keyup"/>
         </h:inputText>
-
         <h:outputText value="Echo output:"/>
         <h:outputText id="textVal" value="#{controller.text}"/>
       </h:panelGrid>
@@ -28,11 +26,13 @@
         <h:inputText id="first" value="#{controller.firstOperand}" size="3"/>
         <h:outputText value="Second Operand:"/>
         <h:inputText id="second" value="#{controller.secondOperand}" size="3"/>
+        <h:outputText value="Third Operand:"/>
+        <h:inputText id="third" value="#{controller.thirdOperand}" size="3"/>
         <h:outputText value="Total:"/>
         <h:outputText id="sum" value="#{controller.total}"/>
         <h:commandButton actionListener="#{controller.calculateTotal}"
                          value="Calculate Sum">
-          <f:ajax execute="first second" render="sum"/>
+          <f:ajax execute="first second third" render="sum"/>
         </h:commandButton>
 
       </h:panelGrid>

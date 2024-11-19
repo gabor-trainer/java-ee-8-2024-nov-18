@@ -15,10 +15,7 @@ public class AgeValidator implements Validator
     public void validate(FacesContext facesContext,
                          UIComponent uiComponent,
                          Object value) throws ValidatorException {
-        org.apache.commons.validator.routines.EmailValidator emailValidator =
-                org.apache.commons.validator.routines.EmailValidator.getInstance();
         HtmlInputText htmlInputText = (HtmlInputText) uiComponent;
-
 
         int age = (int) value;
         if (age <= 18) {

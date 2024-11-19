@@ -12,13 +12,14 @@ public class Controller implements Serializable {
     private String text;
     private int firstOperand;
     private int secondOperand;
+    private int thirdOperand;
     private int total;
 
     public Controller() {
     }
 
     public void calculateTotal() {
-        total = firstOperand + secondOperand;
+        total = firstOperand + secondOperand + thirdOperand;
     }
 
     public String getText() {
@@ -48,6 +49,14 @@ public class Controller implements Serializable {
 
     public int getTotal() {
         return total;
+    }
+
+    public void setThirdOperand(int thirdOperand) {
+        this.thirdOperand = thirdOperand;
+    }
+
+    public int getThirdOperand() {
+        return thirdOperand;
     }
 
     public void setTotal(int total) {
