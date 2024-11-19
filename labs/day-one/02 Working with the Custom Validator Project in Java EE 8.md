@@ -128,9 +128,9 @@ You will enhance the project by adding a new custom validator that ensures the p
     - Open `src/main/webapp/index.xhtml`.
     - Add a new input field for email with the `EmailValidator`:
 
-3.  **Update the Managed Bean**:
+3.  **Update the Named Bean**:
 
-    - Open `src/main/java/com/packt/UserBean.java`.
+    - Open `customer.java`.
     - Add a property for `email` in case it does not exist:
 
       ```Java
