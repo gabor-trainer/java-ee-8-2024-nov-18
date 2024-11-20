@@ -17,7 +17,7 @@ To complete this lab, ensure the following prerequisites are met:
 - **Maven** is installed and properly configured.
 - **The repository Java-EE-8-Application-Development** is cloned on your lab machine.
 
-In case of any of this are not met, please refer to the **Prerequisites**, and **Step 0** in [day one, lab 01 Working...](../day-one/01%20Working%20with%20a%20Simple%20JSF%20form%20Project.md) for guidance.
+In case of any of this are not met, please refer to the **Prerequisites**, and **Step 0** in [day one, lab 01 Working...](../day-01/01%20Working%20with%20a%20Simple%20JSF%20form%20Project.md) for guidance.
 
 ---
 
@@ -35,7 +35,7 @@ In case of any of this are not met, please refer to the **Prerequisites**, and *
 3.  Navigate to the cloned repository folder:  
     `Chapter02/facesflow`.
 4.  Click **Open** to load the Maven project. IntelliJ will automatically detect and import the Maven configuration.
-5.  Configure the project to run with GlassFish 5 as per the instructions in the previous labs. Refer to ([day one, lab 01 Working...](../day-one/01%20Working%20with%20a%20Simple%20JSF%20form%20Project.md) for guidance.)
+5.  Configure the project to run with GlassFish 5 as per the instructions in the previous labs. Refer to ([day one, lab 01 Working...](../day-01/01%20Working%20with%20a%20Simple%20JSF%20form%20Project.md) for guidance.)
 6.
 
 ### **Step 2: Explore the Project**

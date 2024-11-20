@@ -17,7 +17,7 @@ To complete this lab, ensure the following prerequisites are met:
 - **Maven** is installed and properly configured.
 - **The repository Java-EE-8-Application-Development** is cloned on your lab machine.
 
-In case of any of this are not met, please refer to the **Prerequisites**, and **Step 0** in [day one, lab 01 Working...](../day-one/01%20Working%20with%20a%20Simple%20JSF%20form%20Project.md) for guidance.
+In case of any of this are not met, please refer to the **Prerequisites**, and **Step 0** in [day one, lab 01 Working...](../day-01/01%20Working%20with%20a%20Simple%20JSF%20form%20Project.md) for guidance.
 
 ---
 
