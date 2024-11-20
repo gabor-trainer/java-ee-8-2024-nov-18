@@ -1,6 +1,9 @@
 package net.ensode.javaee8book.jsfwebsocket;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -14,6 +17,11 @@ public class JsfWebSocketController implements Serializable {
 
     private String userName;
     private String message;
+    private String selectedChannel;
+
+    public void updateChannel() {
+        // Logic for channel switching if needed, now we just set the selected channel
+    }
 
     public void sendMessage() {
         jsfWebSocketMessageSender.send(String.format("%s: %s", userName, message));
@@ -45,6 +53,13 @@ public class JsfWebSocketController implements Serializable {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getSelectedChannel() {
+        return selectedChannel;
+    }
+    public void setSelectedChannel(String selectedChannel) {
+        this.selectedChannel = selectedChannel;
     }
 
 }

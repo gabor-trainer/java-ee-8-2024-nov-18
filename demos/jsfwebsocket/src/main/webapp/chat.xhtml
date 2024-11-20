@@ -7,10 +7,26 @@
         <title>JSF WebSocket Demo</title>
     </h:head>
     <h:body>
+        // TODO: implement to listen on the selected channel (is binding possible at all for the channel attribute?)
         <f:websocket channel="pushContext" onmessage="socketListener" />
 
-        <h:form prependId="false">
+        <h:form id="chatForm" prependId="false">
             <h:panelGrid columns="2">
+                <h:outputLabel value="Available Channels:" />
+                <h:selectOneMenu id="channelDropdown" value="#{jsfWebSocketController.selectedChannel}">
+                    <f:selectItems value="#{jsfWebSocketMessageSender.channels}" />
+                    <f:ajax event="change" listener="#{jsfWebSocketController.updateChannel}" render="@none" />
+                </h:selectOneMenu>
+
+                <!-- Add Refresh Button -->
+                <h:commandButton value="Refresh Channels" actionListener="#{jsfWebSocketMessageSender.refreshChannels}">
+                    <f:ajax render="channelDropdown" />
+                </h:commandButton>
+
+                <h:outputLabel value="New Channel:" />
+                <h:inputText value="#{jsfWebSocketMessageSender.newChannel}" />
+                <h:commandButton value="Add Channel" action="#{jsfWebSocketMessageSender.addChannel}" />
+
                 <h:outputLabel for="chatWindow" value="Chat Window:"/>
                 <textarea id="chatWindow" rows="10"/>
                 <h:outputLabel for="chatInput" value="Type something here:"/>
@@ -19,9 +35,9 @@
                 <h:commandButton actionListener="#{jsfWebSocketController.sendMessage()}" value="Send message">
                     <f:ajax execute="chatInput" render="chatWindow"/>
                 </h:commandButton>
+
             </h:panelGrid>
         </h:form>
-
         <script type="text/javascript">
             function socketListener(message, channel, event) {
                 console.log("socketListener invoked");
