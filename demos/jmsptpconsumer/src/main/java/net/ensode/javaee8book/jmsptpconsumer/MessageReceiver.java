@@ -29,6 +29,8 @@ public class MessageReceiver implements Serializable{
         JMSContext jmsContext = connectionFactory.createContext();
         JMSConsumer jMSConsumer = jmsContext.createConsumer(queue);
 
+
+
         LOG.log(Level.INFO, "Waiting for messages...");
         while (!goodByeReceived) {
             message = jMSConsumer.receiveBody(String.class);
