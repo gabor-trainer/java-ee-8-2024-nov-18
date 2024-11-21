@@ -33,8 +33,10 @@ public class MessageSender {
 
         LOG.log(Level.INFO, "Sending the following message: {0}", msg1);
         jmsProducer.send(queue, msg1);
+
         LOG.log(Level.INFO, "Sending the following message: {0}", msg2);
         jmsProducer.send(queue, msg2);
+
         LOG.log(Level.INFO, "Sending the following message: {0}", msg3);
         jmsProducer.send(queue, msg3);
 
