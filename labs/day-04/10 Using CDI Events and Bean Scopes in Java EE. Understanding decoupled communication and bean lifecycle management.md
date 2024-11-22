@@ -56,6 +56,10 @@ Special requirements for relating database access:
 
 ### Analyze and fully understand the `cdievents` Project
 
+**Important: The origianls source code in the book is in Java EE 8, contains a legacy file `profiles.xml` in the project root. This file cause inconsitent behaviour in IntelliJ and its maven plugin so you may not be able to create a run configuration and a successful deployment. To fix this issue, you can safely delete this `profiles.xml` file from the project root.**
+
+(Actually, all project in chapter 05 has this very same issue)
+
 Open the `cdievents` project in chapter 5 from existing source, and configure it to use with Glassfish.
 
 Run or debug the project and observe the output. Analyze the code using the following points:
