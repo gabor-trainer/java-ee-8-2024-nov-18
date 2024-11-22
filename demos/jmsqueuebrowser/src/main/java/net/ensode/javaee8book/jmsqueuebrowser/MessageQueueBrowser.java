@@ -1,9 +1,10 @@
 package net.ensode.javaee8book.jmsqueuebrowser;
 
+import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import javax.annotation.Resource;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
@@ -22,11 +23,19 @@ public class MessageQueueBrowser {
     private ConnectionFactory connectionFactory;
     @Resource(mappedName = "jms/JavaEE8BookQueue")
     private Queue queue;
+
     private static final Logger LOG = Logger.getLogger(MessageQueueBrowser.class.getName());
 
+    private List<String> messages = new ArrayList<>();
+
+    public List<String> getMessages() {
+        return messages;
+    }
+
     public void browseMessages() {
+        messages.clear(); // Clear the list to avoid duplications on multiple calls.
         try {
-            Enumeration messageEnumeration;
+            Enumeration<?> messageEnumeration;
             TextMessage textMessage;
             JMSContext jmsContext = connectionFactory.createContext();
             QueueBrowser browser = jmsContext.createBrowser(queue);
@@ -35,24 +44,19 @@ public class MessageQueueBrowser {
 
             if (messageEnumeration != null) {
                 if (!messageEnumeration.hasMoreElements()) {
-                    LOG.log(Level.INFO, "There are no messages "
-                            + "in the queue.");
+                    LOG.log(Level.INFO, "There are no messages in the queue.");
                 } else {
-                    LOG.log(Level.INFO,
-                            "The following messages are in the queue:");
+                    LOG.log(Level.INFO, "The following messages are in the queue:");
                     while (messageEnumeration.hasMoreElements()) {
-                        textMessage = (TextMessage) messageEnumeration.
-                                nextElement();
-                        LOG.log(Level.INFO, textMessage.getText());
+                        textMessage = (TextMessage) messageEnumeration.nextElement();
+                        String messageText = textMessage.getText();
+                        messages.add(messageText); // Add message to the list.
+                        LOG.log(Level.INFO, messageText);
                     }
                 }
             }
         } catch (JMSException e) {
             LOG.log(Level.SEVERE, "JMS Exception caught", e);
         }
-    }
-
-    public static void main(String[] args) {
-        new MessageQueueBrowser().browseMessages();
     }
 }
