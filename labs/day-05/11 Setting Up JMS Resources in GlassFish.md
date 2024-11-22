@@ -73,14 +73,6 @@ The process is almost identical to creating a queue:
 
 ---
 
-#### **Creating Durable Subscribers**
-
-For durable subscribers, follow the same steps as setting up a connection factory, but with an extra property:
-
-- Scroll to the bottom of the page, click **Add Property**, and add a property named `ClientId` with a value like `ExampleId`.
-
----
-
 ### Wrapping Up
 
 Now you’ve set up a JMS connection factory, a message queue, and a message topic in GlassFish. You’re ready to start coding with the JMS API!
